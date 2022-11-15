@@ -1,0 +1,51 @@
+type Query {
+    greeting: Greeting,
+    bookById(id: ID): Book
+    getFullAccount(userId: Int): [UserServerJoin]
+}
+
+type Subscription {
+    greetings: Greeting
+    serverJoinInfos(serverId: Int): UserServerJoin
+}
+
+type Greeting {
+    greeting: String
+}
+
+type Book {
+    id: ID
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
+
+type UserServer {
+    id: ID
+    name: String
+}
+
+type UserServerJoin {
+    id: ID
+    userServer: UserServer
+    userId: Int
+    account: Account
+    userLevel: UserLevel
+}
+
+type Account {
+    id: ID
+    name: String
+}
+
+enum UserLevel {
+    OWNER,
+    MANAGER,
+    JOINER
+}

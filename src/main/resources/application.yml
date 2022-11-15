@@ -1,0 +1,10 @@
+spring:
+  rsocket:
+    server:
+      port: 6000
+  graphql:
+    rsocket:
+      mapping: graphql
+    graphiql:
+      enabled: true
+      path: /graphiql
